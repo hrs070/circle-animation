@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh AVRL Challenge</title>
+
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red: #ff4714;
+            --green: #1e7121;
+            --blue: #1cb6ff;
+            --yellow: #ffff4d;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            width: 240px;
+            height: 343px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .animation-div {
+            width: 100%;
+            height: 70%;
+            position: relative;
+        }
+
+        .btns-div {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .btn {
+            width: 80px;
+            height: 35px;
+            color: white;
+            font-size: 1rem;
+            background-color: #007375;
+            margin: 10px;
+        }
+
+        .circle {
+            width: 70px;
+            height: 70px;
+
+        }
+
+        .red-circle {
+            background-color: var(--red);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            border-top-left-radius: 35px;
+            border-bottom-left-radius: 35px;
+            border-top-right-radius: 35px;
+            border-bottom-right-radius: 35px;
+        }
+
+        .red-anime {
+            animation: redAnime 8s ease-in infinite;
+            -webkit-animation: redAnime 8s infinite;
+        }
+
+        .green-circle {
+            background-color: var(--green);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            border-top-left-radius: 35px;
+            border-bottom-left-radius: 35px;
+            border-top-right-radius: 35px;
+            border-bottom-right-radius: 35px;
+        }
+
+        .green-anime {
+            animation: greenAnime 8s ease-in infinite;
+            -webkit-animation: greenAnime 8s infinite;
+        }
+
+        .blue-circle {
+            background-color: var(--blue);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 2;
+            border-top-left-radius: 35px;
+            border-bottom-left-radius: 35px;
+            border-top-right-radius: 35px;
+            border-bottom-right-radius: 35px;
+        }
+
+        .blue-anime {
+            animation: blueAnime 8s ease-in infinite;
+            -webkit-animation: blueAnime 8s infinite;
+        }
+
+        .yellow-circle {
+            background-color: var(--yellow);
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            border-top-left-radius: 35px;
+            border-bottom-left-radius: 35px;
+            border-top-right-radius: 35px;
+            border-bottom-right-radius: 35px;
+        }
+
+        .yellow-anime {
+            animation: yellowAnime 8s ease-in infinite;
+            -webkit-animation: yellowAnime 8s infinite;
+        }
+
+        @keyframes redAnime {
+            0% {
+                width: 70px;
+                background-color: var(--red);
+            }
+
+            12.5% {
+                width: 240px;
+                background-color: var(--yellow);
+            }
+
+            25% {
+                width: 70px;
+                background-color: var(--yellow);
+            }
+
+            37.5% {
+                width: 240px;
+                background-color: var(--blue);
+            }
+
+            50% {
+                width: 70px;
+                background-color: var(--blue);
+            }
+
+            62.5% {
+                width: 240px;
+                background-color: var(--green);
+            }
+
+            75% {
+                width: 70px;
+                background-color: var(--green);
+            }
+
+            87.5% {
+                width: 240px;
+                background-color: var(--red);
+            }
+
+            100% {
+                width: 70px;
+                background-color: var(--red);
+            }
+        }
+
+        @keyframes greenAnime {
+            0% {
+                height: 70px;
+                background-color: var(--green);
+            }
+
+            12.5% {
+                height: 240px;
+                background-color: var(--red);
+            }
+
+            25% {
+                height: 70px;
+                background-color: var(--red);
+            }
+
+            37.5% {
+                height: 240px;
+                background-color: var(--yellow);
+            }
+
+            50% {
+                height: 70px;
+                background-color: var(--yellow);
+            }
+
+            62.5% {
+                height: 240px;
+                background-color: var(--blue);
+            }
+
+            75% {
+                height: 70px;
+                background-color: var(--blue);
+            }
+
+            87.5% {
+                height: 240px;
+                background-color: var(--green);
+            }
+
+            100% {
+                height: 70px;
+                background-color: var(--green);
+            }
+        }
+
+        @keyframes blueAnime {
+            0% {
+                width: 70px;
+                background-color: var(--blue);
+            }
+
+            12.5% {
+                width: 240px;
+                background-color: var(--green);
+            }
+
+            25% {
+                width: 70px;
+                background-color: var(--green);
+            }
+
+            37.5% {
+                width: 240px;
+                background-color: var(--red);
+            }
+
+            50% {
+                width: 70px;
+                background-color: var(--red);
+            }
+
+            62.5% {
+                width: 240px;
+                background-color: var(--yellow);
+            }
+
+            75% {
+                width: 70px;
+                background-color: var(--yellow);
+            }
+
+            87.5% {
+                width: 240px;
+                background-color: var(--blue);
+            }
+
+            100% {
+                width: 70px;
+                background-color: var(--blue);
+            }
+        }
+
+        @keyframes yellowAnime {
+            0% {
+                height: 70px;
+                background-color: var(--yellow);
+            }
+
+            12.5% {
+                height: 240px;
+                background-color: var(--blue);
+            }
+
+            25% {
+                height: 70px;
+                background-color: var(--blue);
+            }
+
+            37.5% {
+                height: 240px;
+                background-color: var(--green);
+            }
+
+            50% {
+                height: 70px;
+                background-color: var(--green);
+            }
+
+            62.5% {
+                height: 240px;
+                background-color: var(--red);
+            }
+
+            75% {
+                height: 70px;
+                background-color: var(--red);
+            }
+
+            87.5% {
+                height: 240px;
+                background-color: var(--yellow);
+            }
+
+            100% {
+                height: 70px;
+                background-color: var(--yellow);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div class="animation-div">
+            <div class="circle red-circle"></div>
+            <div class="circle green-circle"></div>
+            <div class="circle blue-circle"></div>
+            <div class="circle yellow-circle"></div>
+        </div>
+        <div class="btns-div">
+            <button class="btn btn-start">Start</button>
+            <button class="btn btn-stop">Stop</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    const btnStart = document.querySelector(".btn-start");
+    const btnStop = document.querySelector(".btn-stop");
+
+    const redCircle = document.querySelector(".red-circle");
+    const greenCircle = document.querySelector(".green-circle");
+    const blueCircle = document.querySelector(".blue-circle");
+    const yellowCircle = document.querySelector(".yellow-circle");
+
+    btnStart.addEventListener("click", () => {
+        redCircle.classList.add("red-anime");
+        greenCircle.classList.add("green-anime");
+        blueCircle.classList.add("blue-anime");
+        yellowCircle.classList.add("yellow-anime");
+    })
+
+    btnStop.addEventListener("click", () => {
+        redCircle.classList.remove("red-anime");
+        greenCircle.classList.remove("green-anime");
+        blueCircle.classList.remove("blue-anime");
+        yellowCircle.classList.remove("yellow-anime");
+    })
+
+</script>
+
+</html>
